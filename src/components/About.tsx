@@ -32,16 +32,12 @@ export function About() {
                 src="/images/about-cleaning-team.jpg"
                 alt={t.about.imageAlt}
                 loading="lazy"
-                className="aspect-[4/3] w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
+                className="aspect-[16/10] w-full object-cover object-[68%_20%] transition-transform duration-700 hover:scale-[1.03]"
               />
             </div>
 
-            {/* Verified Office Location Floating Badge */}
-            <div
-              className={`mt-4 sm:mt-0 sm:absolute sm:bottom-5 ${
-                isRtl ? 'sm:right-5' : 'sm:left-5'
-              } max-w-xs rounded-2xl border border-[#E8EFF3] bg-white/95 p-4 shadow-xl shadow-[#102A43]/10 backdrop-blur-md`}
-            >
+            {/* Verified Office Location Floating Badge (anchored left so cleaner stays unobstructed) */}
+            <div className="mt-4 sm:mt-0 sm:absolute sm:bottom-4 sm:left-4 max-w-xs rounded-2xl border border-[#E8EFF3] bg-white/95 p-3.5 sm:p-4 shadow-xl shadow-[#102A43]/10 backdrop-blur-md">
               <div className="flex items-start gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E6F7F5] text-[#00A896]">
                   <MapPin className="h-5 w-5" />
