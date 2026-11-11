@@ -84,6 +84,12 @@ export interface TranslationSchema {
     eyebrow: string;
     heading: string;
     subtitle: string;
+    realResultsTitle: string;
+    realResultsBadge: string;
+    beforeLabel: string;
+    afterLabel: string;
+    inspectBeforeLabel: string;
+    inspectAfterLabel: string;
     showcaseNotice: string;
     allFilter: string;
     zoomLabel: string;
@@ -377,9 +383,15 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       eyebrow: 'Service Standards Showcase',
       heading: 'Our Cleaning Work & Standards',
       subtitle:
-        'Explore the spaces and surface standards we care for across residential, upholstery, kitchen, school, and outdoor categories.',
+        'Explore real on-site cleaning results across Kuwait alongside representative visuals for residential, upholstery, kitchen, school, and outdoor categories.',
+      realResultsTitle: 'Real Before & After Results',
+      realResultsBadge: 'Real Site Photos',
+      beforeLabel: 'Before',
+      afterLabel: 'After',
+      inspectBeforeLabel: 'Inspect before photo',
+      inspectAfterLabel: 'Inspect after photo',
       showcaseNotice:
-        'Representative category visuals showcasing the spaces and cleaning standards we cover—contact us on Instagram or WhatsApp for recent updates.',
+        'Includes authentic before-and-after project photos from our Kuwait cleaning team alongside representative category visuals.',
       allFilter: 'All Spaces',
       zoomLabel: 'Inspect image',
       bookSimilar: 'Book This Category',
@@ -399,11 +411,11 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       eyebrow: 'Live Work Showcase',
       heading: 'See Our Cleaning Team in Action',
       subtitle:
-        'Real on-site video clips from Cleaning Q Kuwait—deep sofa extraction, rotary floor scrubbing, kitchen shining, and precision detailing.',
+        'Real on-site video clips from Cleaning Q Kuwait—herringbone floor scrubbing, room restoration, deep sofa extraction, and kitchen shining.',
       realWorkBadge: 'Real Work',
       allFilter: 'All Videos',
-      showMore: 'View All 11 Videos',
-      showLess: 'Show Featured (4)',
+      showMore: 'View All 15 Videos',
+      showLess: 'Show Featured (8)',
       expandVideo: 'Watch full video',
       bookService: 'Book This Service',
       closeModal: 'Close video player',
@@ -694,9 +706,15 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       eyebrow: 'معرض العناية والتفاصيل',
       heading: 'أعمالنا ومعايير النظافة',
       subtitle:
-        'استعرض فئات المساحات التي نخدمها ومعايير العناية للمنازل والكنب والسجاد والمطابخ والمنشآت والحدائق.',
+        'شاهد نتائج التنظيف الحقيقية قبل وبعد من مواقع العمل في الكويت إلى جانب نماذج الخدمات للمنازل والكنب والسجاد والمطابخ والمنشآت والحدائق.',
+      realResultsTitle: 'نتائج حقيقية من مواقع العمل: قبل وبعد التنظيف',
+      realResultsBadge: 'صور حقيقية من الميدان',
+      beforeLabel: 'قبل التنظيف',
+      afterLabel: 'بعد التنظيف',
+      inspectBeforeLabel: 'عرض صورة قبل التنظيف',
+      inspectAfterLabel: 'عرض صورة بعد التنظيف',
       showcaseNotice:
-        'صور توضيحية لفئات الخدمات ومعايير النظافة التي نقدمها — تابعونا على إنستغرام أو تواصلوا معنا عبر واتساب للاطلاع على أحدث التحديثات.',
+        'تضم هذه الصفحة صور قبل وبعد حقيقية من أعمال فريقنا في الكويت بالإضافة إلى صور توضيحية لفئات الخدمات.',
       allFilter: 'جميع الفئات',
       zoomLabel: 'تكبير الصورة',
       bookSimilar: 'احجز لهذه الفئة',
@@ -716,11 +734,11 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       eyebrow: 'لقطات حقيقية من الميدان',
       heading: 'شاهد نتائج التنظيف على الطبيعة',
       subtitle:
-        'مقاطع فيديو حقيقية من أعمال فريق Cleaning Q Kuwait في الموقع — التنظيف العميق للكنب، جلي الأرضيات، وتلميع المطابخ.',
+        'مقاطع فيديو حقيقية من أعمال فريق Cleaning Q Kuwait في الموقع — جلي الأرضيات بالماكينة، تنظيف الغرف، التنظيف العميق للكنب، وتلميع المطابخ.',
       realWorkBadge: 'عمل حقيقي',
       allFilter: 'جميع الفيديوهات',
-      showMore: 'عرض جميع الفيديوهات (11)',
-      showLess: 'عرض المختارات (4)',
+      showMore: 'عرض جميع الفيديوهات (15)',
+      showLess: 'عرض المختارات (8)',
       expandVideo: 'مشاهدة الفيديو كاملاً',
       bookService: 'احجز هذه الخدمة',
       closeModal: 'إغلاق مشغل الفيديو',

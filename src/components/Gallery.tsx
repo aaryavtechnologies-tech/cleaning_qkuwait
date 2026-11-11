@@ -9,7 +9,13 @@ import {
   X,
 } from 'lucide-react';
 import { useLanguage } from '../context/useLanguage';
-import { GALLERY_ITEMS, type GalleryCategory, type GalleryItem } from '../data/galleryData';
+import {
+  BEFORE_AFTER_WORKS,
+  GALLERY_ITEMS,
+  type BeforeAfterItem,
+  type GalleryCategory,
+  type GalleryItem,
+} from '../data/galleryData';
 import { getServiceWhatsAppUrl } from '../utils/whatsapp';
 
 type FilterType = 'all' | GalleryCategory;
@@ -95,6 +101,116 @@ export function Gallery() {
             {t.gallery.subtitle}
           </p>
         </motion.div>
+
+        {/* Real On-Site Before & After Transformations */}
+        <div className="mt-8 sm:mt-12">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2 sm:mb-6">
+            <h3 className="text-lg font-extrabold text-[#102A43] sm:text-xl">
+              {t.gallery.realResultsTitle}
+            </h3>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E6F7F5] px-3 py-1 text-xs font-bold text-[#00A896]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#00A896]" />
+              <span>{t.gallery.realResultsBadge}</span>
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
+            {BEFORE_AFTER_WORKS.map((pair: BeforeAfterItem) => {
+              const title = language === 'ar' ? pair.titleAr : pair.titleEn;
+              const caption = language === 'ar' ? pair.captionAr : pair.captionEn;
+              const sides: Array<{
+                key: 'before' | 'after';
+                src: string;
+                badge: string;
+                zoomPrefix: string;
+                badgeClasses: string;
+              }> = [
+                {
+                  key: 'before',
+                  src: pair.beforeImage,
+                  badge: t.gallery.beforeLabel,
+                  zoomPrefix: t.gallery.inspectBeforeLabel,
+                  badgeClasses: 'bg-[#102A43]/85 text-white',
+                },
+                {
+                  key: 'after',
+                  src: pair.afterImage,
+                  badge: t.gallery.afterLabel,
+                  zoomPrefix: t.gallery.inspectAfterLabel,
+                  badgeClasses: 'bg-[#00A896] text-white',
+                },
+              ];
+
+              return (
+                <motion.div
+                  key={pair.id}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.45 }}
+                  className="overflow-hidden rounded-3xl border border-[#E8EFF3] bg-white p-3.5 shadow-sm sm:p-5"
+                >
+                  <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5">
+                    {sides.map((side) => (
+                      <button
+                        key={side.key}
+                        type="button"
+                        onClick={() =>
+                          setLightboxItem({
+                            id: `${pair.id}-${side.key}`,
+                            category: pair.category,
+                            image: side.src,
+                            titleEn: `${pair.titleEn} (${t.gallery.beforeLabel === side.badge ? 'Before' : 'After'})`,
+                            titleAr: `${pair.titleAr} (${side.badge})`,
+                            captionEn: pair.captionEn,
+                            captionAr: pair.captionAr,
+                          })
+                        }
+                        aria-label={`${side.zoomPrefix}: ${title}`}
+                        className="group relative aspect-[3/4] cursor-pointer overflow-hidden rounded-2xl bg-[#E8EFF3] focus-visible:outline-2"
+                      >
+                        <img
+                          src={side.src}
+                          alt={`${title} - ${side.badge}`}
+                          loading="lazy"
+                          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1F33]/55 via-transparent to-transparent" />
+                        <span
+                          className={`absolute top-2.5 start-2.5 rounded-lg px-2.5 py-1 text-[11px] font-bold shadow-sm backdrop-blur-sm ${side.badgeClasses}`}
+                        >
+                          {side.badge}
+                        </span>
+                        <span className="absolute bottom-2.5 end-2.5 flex h-8 w-8 items-center justify-center rounded-lg bg-white/85 text-[#102A43] shadow-sm transition-colors group-hover:bg-[#00A896] group-hover:text-white">
+                          <Maximize2 className="h-3.5 w-3.5" />
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+                    <div>
+                      <h4 className="text-sm font-bold text-[#102A43] sm:text-base">{title}</h4>
+                      <p className="mt-1 text-xs leading-relaxed text-[#526572]">{caption}</p>
+                    </div>
+                    <a
+                      href={getServiceWhatsAppUrl(
+                        t.gallery.categories[pair.category],
+                        language
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#E6F7F5] px-4 py-2.5 text-xs font-bold text-[#00A896] transition-colors hover:bg-[#00A896] hover:text-white"
+                    >
+                      <MessageCircle className="h-3.5 w-3.5" />
+                      <span>{t.gallery.bookSimilar}</span>
+                    </a>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Category Filter Tabs */}
         <div
@@ -238,11 +354,15 @@ export function Gallery() {
               </button>
 
               {/* Image Wrapper */}
-              <div className="relative aspect-[16/10] w-full bg-[#0B1F33]">
+              <div className="relative flex max-h-[68vh] min-h-[260px] w-full items-center justify-center bg-[#0B1F33]">
                 <img
                   src={lightboxItem.image}
                   alt={language === 'ar' ? lightboxItem.titleAr : lightboxItem.titleEn}
-                  className="h-full w-full object-cover object-center"
+                  className={
+                    lightboxItem.id.startsWith('ba-')
+                      ? 'max-h-[68vh] w-full object-contain'
+                      : 'aspect-[16/10] max-h-[68vh] w-full object-cover object-center'
+                  }
                 />
 
                 {filteredItems.length > 1 && (

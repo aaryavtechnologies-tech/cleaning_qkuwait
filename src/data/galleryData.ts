@@ -17,6 +17,44 @@ export interface GalleryItem {
   captionAr: string;
 }
 
+export interface BeforeAfterItem {
+  id: string;
+  category: GalleryCategory;
+  beforeImage: string;
+  afterImage: string;
+  titleEn: string;
+  titleAr: string;
+  captionEn: string;
+  captionAr: string;
+}
+
+export const BEFORE_AFTER_WORKS: BeforeAfterItem[] = [
+  {
+    id: 'ba-floor-1',
+    category: 'home',
+    beforeImage: '/images/work-floor-before.jpg',
+    afterImage: '/images/work-floor-after.jpg',
+    titleEn: 'Herringbone Room Floor Deep Wash',
+    titleAr: 'تنظيف وجلي أرضيات الغرف (قبل وبعد)',
+    captionEn:
+      'On-site transformation removing heavy post-construction dust and residue from wood-look ceramic flooring.',
+    captionAr:
+      'نتيجة عمل حقيقية لإزالة مخلفات الغبار والجص بالكامل واستعادة نظافة ولمعان أرضيات السيراميك.',
+  },
+  {
+    id: 'ba-bath-1',
+    category: 'home',
+    beforeImage: '/images/work-bath-before.jpg',
+    afterImage: '/images/work-bath-after.jpg',
+    titleEn: 'Bathroom Marble Tile & Drain Cleaning',
+    titleAr: 'تنظيف أرضيات الحمام والصفاية (قبل وبعد)',
+    captionEn:
+      'Deep scrubbing marble-pattern bathroom floor tiles, grout joints, and floor drain to a spotless finish.',
+    captionAr:
+      'تنظيف عميق لبلاط الحمام وفواصل السيراميك والصفاية لإزالة البقع والأوساخ بالكامل.',
+  },
+];
+
 /**
  * Easy-to-update gallery manifest.
  * Replace `image` paths with authentic Cleaning Q Kuwait project photos at any time.

@@ -177,6 +177,11 @@ export function VideoShowcase() {
     };
   }, [activeVideo, isRtl, showNext, showPrev]);
 
+  const hasHiddenFeatured = useMemo(
+    () => VIDEO_WORKS.some((video) => !video.featured),
+    []
+  );
+
   return (
     <section
       id="videos"
@@ -268,7 +273,7 @@ export function VideoShowcase() {
         </motion.div>
 
         {/* Show All / Collapse Toggle when on All tab */}
-        {activeFilter === 'all' && filteredVideos.length > 4 && (
+        {activeFilter === 'all' && hasHiddenFeatured && (
           <div className="mt-8 text-center">
             <button
               type="button"
