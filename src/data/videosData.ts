@@ -1,0 +1,150 @@
+export type VideoCategory = 'sofa' | 'floor' | 'kitchen';
+
+export interface VideoWorkItem {
+  id: string;
+  src: string;
+  category: VideoCategory;
+  featured: boolean;
+  titleEn: string;
+  titleAr: string;
+  captionEn: string;
+  captionAr: string;
+  serviceNameEn: string;
+  serviceNameAr: string;
+}
+
+export const VIDEO_WORKS: VideoWorkItem[] = [
+  {
+    id: 'vid-03',
+    src: '/videos/work-03.mp4',
+    category: 'sofa',
+    featured: true,
+    titleEn: 'Sofa Deep Extraction',
+    titleAr: 'تنظيف عميق للكنب',
+    captionEn: 'Lifting embedded dust and refreshing fabric upholstery on site.',
+    captionAr: 'شفط عميق للأتربة وإنعاش أقمشة الكنب في الموقع.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+  {
+    id: 'vid-01',
+    src: '/videos/work-01.mp4',
+    category: 'floor',
+    featured: true,
+    titleEn: 'Rotary Marble & Floor Scrubbing',
+    titleAr: 'جلي وتنظيف الأرضيات بالماكينة',
+    captionEn: 'Machine scrubbing and deep foam washing for marble and tile floors.',
+    captionAr: 'غسيل وتنظيف الأرضيات الرخامية والسيراميك بماكينة الجلي.',
+    serviceNameEn: 'House Cleaning',
+    serviceNameAr: 'تنظيف المنازل',
+  },
+  {
+    id: 'vid-07',
+    src: '/videos/work-07.mp4',
+    category: 'kitchen',
+    featured: true,
+    titleEn: 'Kitchen Stove & Stainless Shine',
+    titleAr: 'تلميع وتنظيف أفران المطبخ',
+    captionEn: 'Deep degreasing and spotless finish for stainless steel cookers.',
+    captionAr: 'إزالة الدهون وتلميع أفران الستانلس ستيل في المطابخ.',
+    serviceNameEn: 'Kitchen Deep Cleaning',
+    serviceNameAr: 'التنظيف العميق للمطابخ',
+  },
+  {
+    id: 'vid-04',
+    src: '/videos/work-04.mp4',
+    category: 'kitchen',
+    featured: true,
+    titleEn: 'Lighting & Interior Detailing',
+    titleAr: 'تنظيف الثريات والتفاصيل الداخلية',
+    captionEn: 'Careful hand wiping for delicate hanging fixtures and glass globes.',
+    captionAr: 'عناية دقيقة وتنظيف يدوي للثريات والمصابيح والزجاج.',
+    serviceNameEn: 'Apartment Cleaning',
+    serviceNameAr: 'تنظيف الشقق',
+  },
+  {
+    id: 'vid-11',
+    src: '/videos/work-11.mp4',
+    category: 'sofa',
+    featured: false,
+    titleEn: 'Upholstery Fabric Extraction',
+    titleAr: 'شفط وتنظيف أقمشة المفروشات',
+    captionEn: 'High-suction extraction restoring clean texture to woven upholstery.',
+    captionAr: 'تنظيف واستخلاص الأوساخ لاستعادة نظافة نسيج المفروشات.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+  {
+    id: 'vid-02',
+    src: '/videos/work-02.mp4',
+    category: 'floor',
+    featured: false,
+    titleEn: 'Deep Tile Floor Machine Wash',
+    titleAr: 'غسيل عميق لأرضيات المنازل',
+    captionEn: 'Even rotary machine polishing across spacious residential rooms.',
+    captionAr: 'تنظيف متوازن وشامل للأرضيات الواسعة في الغرف والصالات.',
+    serviceNameEn: 'House Cleaning',
+    serviceNameAr: 'تنظيف المنازل',
+  },
+  {
+    id: 'vid-05',
+    src: '/videos/work-05.mp4',
+    category: 'sofa',
+    featured: false,
+    titleEn: 'Patterned Cushion Refresh',
+    titleAr: 'تنظيف وسائد الكنب والمجالس',
+    captionEn: 'Targeted cushion cleaning while protecting fabric weave and prints.',
+    captionAr: 'عناية خاصة بوسائد المجالس مع الحفاظ على نقوش وألوان القماش.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+  {
+    id: 'vid-06',
+    src: '/videos/work-06.mp4',
+    category: 'sofa',
+    featured: false,
+    titleEn: 'Light Fabric Sofa Care',
+    titleAr: 'تنظيف الكنب الفاتح بعناية',
+    captionEn: 'Gentle passes leaving light-colored seating bright and refreshed.',
+    captionAr: 'تنظيف لطيف يعيد الإشراق والنظافة للكنب ذي الألوان الفاتحة.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+  {
+    id: 'vid-08',
+    src: '/videos/work-08.mp4',
+    category: 'sofa',
+    featured: false,
+    titleEn: 'Armchair Cushion Extraction',
+    titleAr: 'تنظيف عميق لمقاعد الجلوس',
+    captionEn: 'Deep upholstery pass across linen armchair cushions.',
+    captionAr: 'تنظيف شامل لوسائد الكراسي والمجالس المنجدة.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+  {
+    id: 'vid-09',
+    src: '/videos/work-09.mp4',
+    category: 'sofa',
+    featured: false,
+    titleEn: 'Sofa Backrest Upholstery Care',
+    titleAr: 'تنظيف ظهر وجوانب الكنب',
+    captionEn: 'Full backrest extraction for spotless sofa sides and edges.',
+    captionAr: 'تنظيف متكامل لجوانب وظهر الكنب لإزالة الأتربة المتراكمة.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+  {
+    id: 'vid-10',
+    src: '/videos/work-10.mp4',
+    category: 'sofa',
+    featured: false,
+    titleEn: 'Full Seating Surface Wash',
+    titleAr: 'غسيل وتنظيف جلسات الكنب',
+    captionEn: 'Deep suction passes across wide lounge seating cushions.',
+    captionAr: 'غسيل وتنظيف متواصل لمساحات الجلوس الواسعة في الكنب.',
+    serviceNameEn: 'Sofa & Upholstery Cleaning',
+    serviceNameAr: 'تنظيف الكنب والمفروشات',
+  },
+];
+

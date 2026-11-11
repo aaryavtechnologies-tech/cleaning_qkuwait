@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #102A43;
+  --color-navy-deep: #0B1F33;
+  --color-teal: #00A896;
+  --color-teal-dark: #008F80;
+  --color-teal-soft: #E6F7F5;
+  --color-light-bg: #F5FAFC;
+  --color-soft-grey: #E8EFF3;
+  --color-dark-text: #1C2B33;
+  --color-muted-text: #526572;
+  --color-gold: #E9B44C;
+
+  --font-en: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-ar: "Cairo", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+    font-family: var(--font-en);
+  }
+
+  html[dir="rtl"] {
+    font-family: var(--font-ar);
+  }
+
+  html[dir="ltr"] {
+    font-family: var(--font-en);
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #ffffff;
+    color: #1C2B33;
+  }
+
+  /* Accessibility: crisp keyboard focus rings */
+  :focus-visible {
+    outline: 2px solid #00A896;
+    outline-offset: 2px;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Subtle dot pattern utility */
+.bg-architectural-dots {
+  background-image: radial-gradient(#CBD8E1 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-navy-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
