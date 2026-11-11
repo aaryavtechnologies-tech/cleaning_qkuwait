@@ -81,8 +81,8 @@ export function Gallery() {
   }, [isRtl, lightboxItem, showNext, showPrev]);
 
   return (
-    <section id="gallery" className="bg-[#F5FAFC] py-14 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div data-section="service-gallery" className="mt-12 sm:mt-16">
+      <div>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -94,9 +94,9 @@ export function Gallery() {
           <span className="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-bold text-[#00A896] ring-1 ring-[#E8EFF3]">
             {t.gallery.eyebrow}
           </span>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-[#102A43] sm:mt-4 sm:text-4xl">
+          <h3 className="mt-3 text-xl font-extrabold tracking-tight text-[#102A43] sm:mt-4 sm:text-3xl">
             {t.gallery.heading}
-          </h2>
+          </h3>
           <p className="mt-3 text-sm leading-relaxed text-[#526572] sm:mt-4 sm:text-base">
             {t.gallery.subtitle}
           </p>
@@ -426,6 +426,6 @@ export function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </div>
   );
 }

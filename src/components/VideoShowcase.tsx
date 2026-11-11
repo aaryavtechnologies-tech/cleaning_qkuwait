@@ -148,9 +148,9 @@ export function VideoShowcase() {
   );
 
   return (
-    <section
-      id="videos"
-      className="relative overflow-hidden bg-[#0B1F33] bg-navy-grid py-14 text-white sm:py-24"
+    <div
+      data-section="service-videos"
+      className="relative mt-12 overflow-hidden rounded-3xl bg-[#0B1F33] bg-navy-grid px-4 py-10 text-white shadow-xl sm:mt-16 sm:px-8 sm:py-14"
     >
       {/* Subtle Ambient Teal Glow */}
       <div
@@ -158,7 +158,7 @@ export function VideoShowcase() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -171,9 +171,9 @@ export function VideoShowcase() {
             <Film className="h-3.5 w-3.5" />
             <span>{t.videos.eyebrow}</span>
           </span>
-          <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-white sm:mt-4 sm:text-4xl">
+          <h3 className="mt-3 text-xl font-extrabold tracking-tight text-white sm:mt-4 sm:text-3xl">
             {t.videos.heading}
-          </h2>
+          </h3>
           <p className="mt-3 text-sm leading-relaxed text-white/75 sm:mt-4 sm:text-base">
             {t.videos.subtitle}
           </p>
@@ -358,7 +358,7 @@ export function VideoShowcase() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </div>
   );
 }
 

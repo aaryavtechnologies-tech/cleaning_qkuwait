@@ -4,14 +4,12 @@ import { Benefits } from './components/Benefits';
 import { Contact } from './components/Contact';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { Footer } from './components/Footer';
-import { Gallery } from './components/Gallery';
 import { Hero } from './components/Hero';
 import { HowItWorks } from './components/HowItWorks';
 import { Navbar } from './components/Navbar';
 import { ServiceAreas } from './components/ServiceAreas';
 import { Services } from './components/Services';
 import { Testimonials } from './components/Testimonials';
-import { VideoShowcase } from './components/VideoShowcase';
 import { LanguageProvider } from './context/LanguageContext';
 
 export function App() {
@@ -26,8 +24,6 @@ export function App() {
             <About />
             <Services />
             <Benefits />
-            <VideoShowcase />
-            <Gallery />
             <HowItWorks />
             <ServiceAreas />
             <Testimonials />
