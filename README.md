@@ -1,32 +1,44 @@
-# React + TypeScript + Vite
+# -Cleaning-kuwati-
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Premium bilingual (Arabic RTL & English LTR) single-page website for **Cleaning Q Kuwait (شركة تنظيف بالكويت)**.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **TypeScript**
+- **Vite**
+- **Tailwind CSS v4**
+- **Framer Motion**
+- **Lucide Icons**
 
-## React Compiler
+## Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Production Build & Lint
+
+```bash
+npm run lint
+npm run build
+```
+
+## Media & Content Configuration
+
+- Service photography: `public/images/`
+- Company cleaning videos: `public/videos/` (`src/data/videosData.ts`)
+- Gallery manifest: `src/data/galleryData.ts`
+- Verified testimonials (hidden when empty): `src/data/testimonialsData.ts`
+- Bilingual dictionary: `src/data/translations.ts`
+
+## Cloudflare Deployment
+
+When deploying to **Cloudflare Pages**, use these exact dashboard build settings (do not deploy the repository root `/` directly, as serving unbuilt `/src/main.tsx` causes a strict MIME type `application/octet-stream` module script error):
+
+- **Framework preset:** `Vite` (or `None`)
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Node.js version:** `22` (configured via `.nvmrc` and `package.json` `engines`, or set environment variable `NODE_VERSION=22`)
+
+For **Cloudflare Workers Static Assets** / Workers Builds, `wrangler.jsonc` is configured to serve `./dist` with SPA fallback handling, and `public/_headers` + `public/_redirects` are automatically copied to `dist/`.
