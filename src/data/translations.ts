@@ -54,6 +54,11 @@ export interface TranslationSchema {
     heading: string;
     subtitle: string;
     bookButton: string;
+    photoMode: string;
+    videoMode: string;
+    mediaHeading: string;
+    mediaSubtitle: string;
+    realVideoBadge: string;
     items: Record<
       | 'apartment'
       | 'house'
@@ -284,6 +289,12 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       subtitle:
         'Select any service below to open a prefilled WhatsApp inquiry with our team for availability and booking.',
       bookButton: 'Book This Service',
+      photoMode: 'Photo',
+      videoMode: 'Real Video',
+      mediaHeading: 'Real Service Videos & Before/After Photos',
+      mediaSubtitle:
+        'Watch live cleaning footage and real before-and-after results directly from our cleaning teams in Kuwait.',
+      realVideoBadge: 'Live Clip',
       items: {
         apartment: {
           name: 'Apartment Cleaning',
@@ -612,6 +623,12 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       subtitle:
         'اختر الخدمة المطلوبة لفتح رسالة واتساب جاهزة باسم الخدمة للتنسيق والاستفسار عن الحجز.',
       bookButton: 'احجز هذه الخدمة',
+      photoMode: 'صورة',
+      videoMode: 'فيديو حقيقي',
+      mediaHeading: 'فيديوهات وصور حقيقية لأعمال خدماتنا',
+      mediaSubtitle:
+        'شاهد لقطات الفيديو المباشرة ونتائج التنظيف الحقيقية قبل وبعد من مواقع عمل فريقنا في الكويت.',
+      realVideoBadge: 'فيديو مباشر',
       items: {
         apartment: {
           name: 'تنظيف الشقق',

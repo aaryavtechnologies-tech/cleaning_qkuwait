@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   ChevronDown,
@@ -17,6 +17,7 @@ import {
   type VideoWorkItem,
 } from '../data/videosData';
 import { getServiceWhatsAppUrl } from '../utils/whatsapp';
+import { AutoPlayVideo } from './AutoPlayVideo';
 
 type VideoFilter = 'all' | VideoCategory;
 
@@ -37,36 +38,6 @@ function AutoPlayReelCard({
   categoryLabel: string;
   onSelect: (item: VideoWorkItem) => void;
 }) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
-
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            el.play().catch(() => {
-              // Ignore browser autoplay rejection if any
-            });
-          } else {
-            el.pause();
-          }
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <motion.button
       layout
@@ -79,14 +50,8 @@ function AutoPlayReelCard({
       aria-label={`${expandLabel}: ${title}`}
       className="group relative aspect-[3/4] w-full cursor-pointer overflow-hidden rounded-2xl border border-white/15 bg-[#081625] text-start shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#00A896]/60 sm:rounded-3xl"
     >
-      <video
-        ref={videoRef}
+      <AutoPlayVideo
         src={item.src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
         className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
       />
 

@@ -11,6 +11,7 @@ export type ServiceId =
 export interface ServiceItemConfig {
   id: ServiceId;
   image: string;
+  video?: string;
   iconName:
     | 'Building2'
     | 'Home'
@@ -26,11 +27,13 @@ export const SERVICES_LIST: ServiceItemConfig[] = [
   {
     id: 'apartment',
     image: '/images/service-apartment.jpg',
+    video: '/videos/work-15.mp4',
     iconName: 'Building2',
   },
   {
     id: 'house',
     image: '/images/service-house.jpg',
+    video: '/videos/work-14.mp4',
     iconName: 'Home',
   },
   {
@@ -46,16 +49,19 @@ export const SERVICES_LIST: ServiceItemConfig[] = [
   {
     id: 'sofa',
     image: '/images/service-sofa.jpg',
+    video: '/videos/work-03.mp4',
     iconName: 'Armchair',
   },
   {
     id: 'kitchen',
     image: '/images/service-kitchen.jpg',
+    video: '/videos/work-07.mp4',
     iconName: 'Utensils',
   },
   {
     id: 'school',
     image: '/images/service-school.jpg',
+    video: '/videos/work-01.mp4',
     iconName: 'GraduationCap',
   },
   {
