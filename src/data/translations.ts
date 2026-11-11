@@ -30,13 +30,6 @@ export interface TranslationSchema {
       kuwaitWide: string;
       fastResponse: string;
     };
-    showcase: {
-      liveBadge: string;
-      watchAllCta: string;
-      beforeTag: string;
-      afterTag: string;
-      resultLabel: string;
-    };
     scrollCue: string;
     imageAlt: string;
   };
@@ -251,13 +244,6 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
         professional: 'Professional Cleaning',
         kuwaitWide: 'Kuwait-Wide Service',
         fastResponse: 'Fast Response',
-      },
-      showcase: {
-        liveBadge: 'On-Site Video • Kuwait',
-        watchAllCta: 'All Service Videos & Photos',
-        beforeTag: 'Before',
-        afterTag: 'After',
-        resultLabel: 'Floor Deep Wash',
       },
       scrollCue: 'Explore Services',
       imageAlt: 'Spotless modern luxury living room interior in Kuwait',
@@ -590,13 +576,6 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
         professional: 'تنظيف احترافي',
         kuwaitWide: 'تغطية شاملة للكويت',
         fastResponse: 'استجابة سريعة',
-      },
-      showcase: {
-        liveBadge: 'فيديو مباشر من الموقع • الكويت',
-        watchAllCta: 'شاهد كل فيديوهات وصور الخدمات',
-        beforeTag: 'قبل',
-        afterTag: 'بعد',
-        resultLabel: 'تنظيف عميق للأرضيات',
       },
       scrollCue: 'استكشف خدماتنا',
       imageAlt: 'غرفة معيشة فاخرة ونظيفة بالكامل في الكويت',
