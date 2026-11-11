@@ -34,10 +34,10 @@ const ICON_MAP: Record<ServiceItemConfig['iconName'], LucideIcon> = {
 
 export function Services() {
   const { language, t } = useLanguage();
-  const [videoPreviewCards, setVideoPreviewCards] = useState<Partial<Record<ServiceId, boolean>>>({});
+  const [photoModeCards, setPhotoModeCards] = useState<Partial<Record<ServiceId, boolean>>>({});
 
-  const toggleCardVideo = (serviceId: ServiceId) => {
-    setVideoPreviewCards((prev) => ({
+  const toggleCardMedia = (serviceId: ServiceId) => {
+    setPhotoModeCards((prev) => ({
       ...prev,
       [serviceId]: !prev[serviceId],
     }));
@@ -71,7 +71,7 @@ export function Services() {
             const Icon = ICON_MAP[service.iconName];
             const copy = t.services.items[service.id];
             const waUrl = getServiceWhatsAppUrl(copy.name, language);
-            const showVideo = Boolean(service.video && videoPreviewCards[service.id]);
+            const showVideo = Boolean(service.video && !photoModeCards[service.id]);
 
             return (
               <motion.article
@@ -82,7 +82,7 @@ export function Services() {
                 transition={{ duration: 0.5, delay: Math.min(idx * 0.05, 0.3) }}
                 className="group flex flex-col overflow-hidden rounded-3xl border border-[#E8EFF3] bg-white shadow-[0_8px_24px_-14px_rgba(16,42,67,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#00A896]/40 hover:shadow-[0_24px_48px_-18px_rgba(16,42,67,0.2)]"
               >
-                {/* Card Photo / Optional Real Video */}
+                {/* Card Real Autoplay Video / Photo */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#102A43]">
                   {showVideo && service.video ? (
                     <AutoPlayVideo
@@ -103,7 +103,7 @@ export function Services() {
                   {service.video && (
                     <button
                       type="button"
-                      onClick={() => toggleCardVideo(service.id)}
+                      onClick={() => toggleCardMedia(service.id)}
                       className="absolute top-3 end-3 inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-white/25 bg-[#102A43]/80 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-md transition-colors hover:bg-[#00A896]"
                     >
                       {showVideo ? (

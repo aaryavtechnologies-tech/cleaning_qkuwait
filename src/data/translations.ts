@@ -10,7 +10,6 @@ export interface TranslationSchema {
     about: string;
     services: string;
     whyUs: string;
-    ourWork: string;
     contact: string;
     whatsapp: string;
     callNow: string;
@@ -30,6 +29,13 @@ export interface TranslationSchema {
       professional: string;
       kuwaitWide: string;
       fastResponse: string;
+    };
+    showcase: {
+      liveBadge: string;
+      watchAllCta: string;
+      beforeTag: string;
+      afterTag: string;
+      resultLabel: string;
     };
     scrollCue: string;
     imageAlt: string;
@@ -56,9 +62,6 @@ export interface TranslationSchema {
     bookButton: string;
     photoMode: string;
     videoMode: string;
-    mediaHeading: string;
-    mediaSubtitle: string;
-    realVideoBadge: string;
     items: Record<
       | 'apartment'
       | 'house'
@@ -228,7 +231,6 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       about: 'About Us',
       services: 'Services',
       whyUs: 'Why Choose Us',
-      ourWork: 'Our Work',
       contact: 'Contact',
       whatsapp: 'WhatsApp',
       callNow: 'Call Now',
@@ -249,6 +251,13 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
         professional: 'Professional Cleaning',
         kuwaitWide: 'Kuwait-Wide Service',
         fastResponse: 'Fast Response',
+      },
+      showcase: {
+        liveBadge: 'On-Site Video • Kuwait',
+        watchAllCta: 'All Service Videos & Photos',
+        beforeTag: 'Before',
+        afterTag: 'After',
+        resultLabel: 'Floor Deep Wash',
       },
       scrollCue: 'Explore Services',
       imageAlt: 'Spotless modern luxury living room interior in Kuwait',
@@ -291,10 +300,6 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       bookButton: 'Book This Service',
       photoMode: 'Photo',
       videoMode: 'Real Video',
-      mediaHeading: 'Real Service Videos & Before/After Photos',
-      mediaSubtitle:
-        'Watch live cleaning footage and real before-and-after results directly from our cleaning teams in Kuwait.',
-      realVideoBadge: 'Live Clip',
       items: {
         apartment: {
           name: 'Apartment Cleaning',
@@ -391,8 +396,8 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       ],
     },
     gallery: {
-      eyebrow: 'Service Standards Showcase',
-      heading: 'Our Cleaning Work & Standards',
+      eyebrow: 'Service Photo & Result Gallery',
+      heading: 'Service Results & Cleaning Standards',
       subtitle:
         'Explore real on-site cleaning results across Kuwait alongside representative visuals for residential, upholstery, kitchen, school, and outdoor categories.',
       realResultsTitle: 'Real Before & After Results',
@@ -419,8 +424,8 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       },
     },
     videos: {
-      eyebrow: 'Live Work Showcase',
-      heading: 'See Our Cleaning Team in Action',
+      eyebrow: 'Service Field Videos',
+      heading: 'Watch Our Cleaning Services in Action',
       subtitle:
         'Real on-site video clips from Cleaning Q Kuwait—herringbone floor scrubbing, room restoration, deep sofa extraction, and kitchen shining.',
       realWorkBadge: 'Real Work',
@@ -565,7 +570,6 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       about: 'من نحن',
       services: 'خدماتنا',
       whyUs: 'لماذا تختارنا',
-      ourWork: 'أعمالنا',
       contact: 'تواصل معنا',
       whatsapp: 'واتساب',
       callNow: 'اتصل الآن',
@@ -586,6 +590,13 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
         professional: 'تنظيف احترافي',
         kuwaitWide: 'تغطية شاملة للكويت',
         fastResponse: 'استجابة سريعة',
+      },
+      showcase: {
+        liveBadge: 'فيديو مباشر من الموقع • الكويت',
+        watchAllCta: 'شاهد كل فيديوهات وصور الخدمات',
+        beforeTag: 'قبل',
+        afterTag: 'بعد',
+        resultLabel: 'تنظيف عميق للأرضيات',
       },
       scrollCue: 'استكشف خدماتنا',
       imageAlt: 'غرفة معيشة فاخرة ونظيفة بالكامل في الكويت',
@@ -625,10 +636,6 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       bookButton: 'احجز هذه الخدمة',
       photoMode: 'صورة',
       videoMode: 'فيديو حقيقي',
-      mediaHeading: 'فيديوهات وصور حقيقية لأعمال خدماتنا',
-      mediaSubtitle:
-        'شاهد لقطات الفيديو المباشرة ونتائج التنظيف الحقيقية قبل وبعد من مواقع عمل فريقنا في الكويت.',
-      realVideoBadge: 'فيديو مباشر',
       items: {
         apartment: {
           name: 'تنظيف الشقق',
@@ -720,8 +727,8 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       ],
     },
     gallery: {
-      eyebrow: 'معرض العناية والتفاصيل',
-      heading: 'أعمالنا ومعايير النظافة',
+      eyebrow: 'معرض صور ونتائج خدماتنا',
+      heading: 'نتائج خدمات التنظيف ومعايير الجودة',
       subtitle:
         'شاهد نتائج التنظيف الحقيقية قبل وبعد من مواقع العمل في الكويت إلى جانب نماذج الخدمات للمنازل والكنب والسجاد والمطابخ والمنشآت والحدائق.',
       realResultsTitle: 'نتائج حقيقية من مواقع العمل: قبل وبعد التنظيف',
@@ -748,8 +755,8 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
       },
     },
     videos: {
-      eyebrow: 'لقطات حقيقية من الميدان',
-      heading: 'شاهد نتائج التنظيف على الطبيعة',
+      eyebrow: 'فيديوهات حقيقية لخدماتنا',
+      heading: 'شاهد فيديوهات خدمات التنظيف في الموقع',
       subtitle:
         'مقاطع فيديو حقيقية من أعمال فريق Cleaning Q Kuwait في الموقع — جلي الأرضيات بالماكينة، تنظيف الغرف، التنظيف العميق للكنب، وتلميع المطابخ.',
       realWorkBadge: 'عمل حقيقي',
